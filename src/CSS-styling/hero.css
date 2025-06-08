@@ -1,0 +1,81 @@
+.hero-section {
+  background: url('../assets/home.jpg') center/cover no-repeat;
+  height: 510px;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 1rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+}
+
+.hero-buttons button {
+  margin: 0 10px 0 0 ;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.join-btn {
+  background-color: var(--luxury);
+  color: white;
+}
+
+.explore-btn {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) and (max-width: 480px) {
+  .hero-section {
+  background: url('../assets/home.jpg') center/cover no-repeat;
+  background-size: 100% 100%;
+  height: 250px;
+}
+.overlay {
+  padding: 0.1rem;
+ 
+}
+  .hero-section h1 {
+    font-size: 1.2rem;
+    }
+
+  .hero-section p {
+    font-size: 0.71rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+   margin: 20px;
+  }
+
+  .hero-buttons button {
+    margin:0.1rem;
+    font-size: 0.5rem;
+  }
+}

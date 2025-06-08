@@ -1,0 +1,59 @@
+.quick-stats {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.quick-stats h2 {
+  font-size: 2.5rem;
+  margin:-50px 0 10px 0;
+  color: var(--primary);
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: 900;
+}
+@media (max-width: 768px) and (max-width: 480px) {
+
+ .stat-card {
+ 
+  padding: 10px;
+  width: 85px;
+}
+.stat-card p {
+  font-size: 0.7rem;
+
+  font-weight: 900;
+}
+.stat-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 4fr));
+}
+}
+

@@ -1,0 +1,77 @@
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-step input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-step button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-step button:hover {
+  background-color: #005fa3;
+}
+
+.form-step .error {
+  color: red;
+  font-size: 0.9rem;
+}
+.form-grid {
+  display: grid;
+ grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 600px;
+  margin: auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.form-grid label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+.form-grid input::placeholder {
+  color: #bbb;
+}
+
+.form-grid span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #777;
+}
+.buttons{
+  display:flex;
+  justify-content: space-between;
+  padding:20px 10px;
+}
+.input-error {
+  border: 2px solid red !important;
+}

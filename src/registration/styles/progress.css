@@ -1,0 +1,68 @@
+
+/* ProgressBar.css */
+
+.progressbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  color: #bbb;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.progress-step .step-icon {
+  background-color: #eee;
+  color: #bbb;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 1;
+}
+
+.progress-step .step-label {
+  text-align: center;
+  max-width: 80px;
+}
+
+.progress-step .step-bar {
+  position: absolute;
+  top: 15px;
+  left: 0%;
+  height: 4px;
+  width: 100%;
+  background-color: #eee;
+  z-index: 0;
+  transform: translateX(50%);
+}
+
+.progress-step:last-child .step-bar {
+  display: none;
+}
+
+.progress-step.active .step-icon {
+  background-color: #007bff;
+  color: white;
+}
+
+.progress-step.completed .step-icon {
+  background-color: #28a745;
+  color: white;
+}
+
+.progress-step.completed .step-bar {
+  background-color: #28a745;
+}

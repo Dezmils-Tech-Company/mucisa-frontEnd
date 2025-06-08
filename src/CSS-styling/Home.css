@@ -1,0 +1,43 @@
+.hero{
+    height:510px;
+    width:100%;
+    object-fit: cover;
+    overflow: hidden;
+    justify-content: center;
+    background-image: url('../assets/home.jpg');
+    background-position: center;
+    background-size: cover;
+}
+h2{
+    text-align: center;
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+}
+.home-container img{
+    object-fit: cover;
+}
+@media (max-width: 768px) and (max-width: 480px) {
+   .section-title h2{
+    font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.home{
+  width: 100%;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow-wrap: hidden;
+}
+html{
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+}

@@ -1,0 +1,50 @@
+.activities-wrapper {
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.activity-block {
+  margin-bottom: 3rem;
+}
+
+.activity-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.activity-block p {
+  margin-bottom: 1rem;
+  color: #444;
+  text-align: center;
+}
+
+.masonry-gallery {
+  column-count: 3;
+  column-gap: 0.5rem;
+}
+
+.masonry-gallery img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  break-inside: avoid;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  
+}

@@ -1,0 +1,107 @@
+/* Reset some defaults for better consistency */
+• {
+  box-sizing: border-box;
+}
+
+.support {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #01579b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* Grid container for support cards */
+.support__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Individual card */
+.support__card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.063);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.support__card:focus,
+.support__card:hover {
+  transform: translateY(-6px);
+}
+
+/* Icon style */
+.support__icon {
+  color: #00bcd4; /* Aqua */
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+/* Card title */
+.support__card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #007bb5;
+}
+
+/* Card description */
+.support__card p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #004a75;
+  flex-grow: 1;
+}
+
+/* Buttons */
+.support__btn {
+  background-color: var(--luxury) ;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.063);
+  user-select: none;
+}
+
+.support__btn:hover,
+.support__btn:focus {
+  background-color: #0097a7;
+  box-shadow: 0 8px 20px rgba(0, 150, 167, 0.6);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .support__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .support__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support__header h1 {
+    font-size: 2.2rem;
+  }
+}

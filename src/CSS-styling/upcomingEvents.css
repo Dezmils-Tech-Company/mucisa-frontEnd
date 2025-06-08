@@ -1,0 +1,99 @@
+/* Container for the events section */
+.events-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Section title */
+.events-section__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Events list container */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Single event card */
+.event-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: var(--accent);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Date container */
+.event-date {
+  flex: 0 0 100px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--secondary);
+  text-align: center;
+  border-right: 1px solid #ccc;
+  padding-right: 1rem;
+  min-width: 100px;
+  justify-content: center;
+}
+
+/* Date format: month and day stacked */
+.event-date__month {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.event-date__day {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* Event details container */
+.event-details {
+  flex: 1;
+  min-width: 0; /* for text truncation if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Time and venue row */
+.event-time-venue {
+  font-size: 0.9rem;
+  color: var(--luxury);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Description */
+.event-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) and (max-width: 768px){
+  .event-date {
+
+    padding-right: 0;
+    padding-bottom: 1rem;
+    min-width: auto;
+  }
+  .event-time-venue {
+    gap: 0.15rem;
+  }
+}

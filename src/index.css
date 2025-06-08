@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Inter&family=Montserrat&family=Outfit&family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+  --primary:#0a0a23;
+  --secondary:#0505ed;
+  --accent:#f2f2fba3;
+  --luxury:#0bedf5;
+  
+}
+html {
+      width: 100%;
+      overflow-x: hidden;
+    }
+body {
+  margin: 0;
+    font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+      margin: 0; 
+      padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.header.scrolled {
+  box-shadow: 0 4px 12px #00091361;
+  z-index: 1000;
+}
+.content{
+  margin: 4rem 0 0 0;
+}
+h2{
+    text-align: center;
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+button {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--luxury);
+    color: #ffffff;
+    font-size:1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #25b8ed;
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  nav ul {
+    padding: 5px 10px;
+    font-size: 0.98rem;
+}
+ nav li {
+    margin: 5px 10px;
+    font-size: 0.88rem;
+}
+header{
+  box-shadow: 0 4px 12px #0009130a;
+}
+.header.scrolled {
+  box-shadow: 0 4px 12px #00091361;
+  z-index: 1000;
+
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow-wrap: hidden;
+}
+}
+
+
+
