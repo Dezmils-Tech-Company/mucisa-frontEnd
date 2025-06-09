@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import '../CSS-styling/AboutHome.css';
 import mucisa from '../assets/mucisa.jpeg'
-import {
-    BrowserRouter as useNavigate} from "react-router-dom";
-import { FaArrowAltCircleRight, FaInfoCircle } from "react-icons/fa";
+
+import {  FaInfoCircle } from "react-icons/fa";
 
 const AboutMucisa = () => {
-     const navigate = useNavigate();
+   
   return (
     <section className="about-mucisa">
         
@@ -24,8 +23,7 @@ const AboutMucisa = () => {
           <br />
           The association also plays a key role in bridging the gap between students and the tech industry through mentorship programs, networking opportunities, and innovation-driven events. MUCISA strives to foster creativity, leadership, and teamwork among its members while promoting the practical application of computer science in solving real-world challenges.
         </p>
-        <button className="learn-more-btn" onClick={() =>
-                 navigate("/about")}>learn more  <FaArrowAltCircleRight/></button>
+        
       </motion.div>
       <motion.div
         className="about-image"

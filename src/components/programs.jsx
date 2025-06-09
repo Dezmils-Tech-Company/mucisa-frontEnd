@@ -1,8 +1,7 @@
 
 import { motion } from 'framer-motion';
 import '../CSS-styling/programs.css';
-import {
-    BrowserRouter as useNavigate} from "react-router-dom";
+
 
 const programData = [
   { title: 'Hackathons',
@@ -16,7 +15,7 @@ const programData = [
 ];
 
 const Programs = () => {
-    const navigate = useNavigate();
+ 
   return (
     <section className="programs-section">
       <h2>Our Programs</h2>
@@ -34,8 +33,7 @@ const Programs = () => {
             <h3>{program.title}</h3>
             <p>{program.description}</p>
 
-            <button  key={index} onClick={() =>
-                 navigate(program.Path)}>view More</button>
+            
           </motion.div>
         ))}
       </div>
