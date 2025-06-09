@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import '../CSS-styling/AboutHome.css';
 import mucisa from '../assets/mucisa.jpeg'
 import {
-    BrowserRouter as Router,Routes,Route,Link,useNavigate,Outlet,} from "react-router-dom";
+    BrowserRouter as useNavigate} from "react-router-dom";
 import { FaArrowAltCircleRight, FaInfoCircle } from "react-icons/fa";
 
 const AboutMucisa = () => {
@@ -35,7 +35,7 @@ const AboutMucisa = () => {
         viewport={{ once: false }}
       >
         <div  className="about-content">
-        <img src={mucisa} />
+        <img src={mucisa} alt='Mucisa Group' />
         </div>
       </motion.div>
     </section>

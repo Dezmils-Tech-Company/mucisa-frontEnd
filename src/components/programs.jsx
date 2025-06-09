@@ -1,9 +1,8 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import '../CSS-styling/programs.css';
 import {
-    BrowserRouter as Router,Routes, Route, Link,useNavigate,
-    Outlet} from "react-router-dom";
+    BrowserRouter as useNavigate} from "react-router-dom";
 
 const programData = [
   { title: 'Hackathons',

@@ -1,10 +1,9 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaInstagram, FaInstagramSquare, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram,  FaLinkedin } from 'react-icons/fa'
 import {SiX} from 'react-icons/si'
 import '../CSS-styling/Team.css';
 import dd from '../assets/dd.png'
-import hhh from '../assets/hhh.jpg'
 import Faima from '../assets/Faima.jpg'
 import mutua from '../assets/mutua.jpg'
 import Nickson from '../assets/Nickson.jpg'

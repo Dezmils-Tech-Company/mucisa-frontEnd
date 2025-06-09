@@ -2,7 +2,7 @@ import React from "react";
 import {  FaBullseye, FaInfoCircle } from "react-icons/fa";
 import {AiOutlineUser} from "react-icons/ai";
 import {
-    BrowserRouter as Router,Routes,Route,Link,useNavigate,Outlet,} from "react-router-dom";
+    BrowserRouter as Link,Outlet} from "react-router-dom";
 import '../CSS-styling/About.css';
 import wrric1 from '../assets/wrric1.jpeg'
 import about1 from '../assets/about1.jpg'

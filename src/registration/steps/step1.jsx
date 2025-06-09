@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/Step1.css';
 
 const Step1 = ({ nextStep, handleDataChange }) => {
@@ -13,18 +13,7 @@ const Step1 = ({ nextStep, handleDataChange }) => {
   });
 
   const [errors, setErrors] = useState({});
-  const [maxDate, setMaxDate] = useState('');
-
-  // Calculate max allowed birthdate (today - 18 years)
-  useEffect(() => {
-    const today = new Date();
-    today.setFullYear(today.getFullYear() - 18);
-    const yyyy = today.getFullYear();
-    const mm = (today.getMonth() + 1).toString().padStart(2, '0');
-    const dd = today.getDate().toString().padStart(2, '0');
-    setMaxDate(`${yyyy}-${mm}-${dd}`);
-  }, []);
-
+  
   const handleChange = e => {
     const { name, value } = e.target;
     setLocalData(prev => ({ ...prev, [name]: value }));
