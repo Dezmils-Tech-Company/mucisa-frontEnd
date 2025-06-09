@@ -1,8 +1,5 @@
 import React from "react";
 import {  FaBullseye, FaInfoCircle } from "react-icons/fa";
-import {AiOutlineUser} from "react-icons/ai";
-import {
-    BrowserRouter as Link,Outlet} from "react-router-dom";
 import '../CSS-styling/About.css';
 import wrric1 from '../assets/wrric1.jpeg'
 import about1 from '../assets/about1.jpg'
@@ -12,22 +9,6 @@ import about1 from '../assets/about1.jpg'
 export default function About(){
     return(
         <>
-              
-                  <nav className="about-nav">
-        <ul>
-          <li>
-            <Link to="team" className="nav-link">
-              <AiOutlineUser className="nav-icon" /> Our Team
-            </Link>
-          </li>
-          <li>
-            <Link to="company" className="nav-link">
-              Our Partners
-            </Link>
-          </li>
-        </ul>
-      </nav>
-                  <Outlet />
                <div className="about-container">
         <section className="about-card">
           <FaInfoCircle className="about-icon" />
@@ -43,7 +24,7 @@ export default function About(){
             <br />
             Established with the vision of uniting students in the field of technology, MUCISA plays a pivotal role in organising activities that promote academic excellence, career growth and community development. We focus on equipping students with skills, resources and networks necessary to succeed in a rapidly evolving tech-driven world.
           </p>
-          <p className="about-text">
+          <p >
             Throughout each academic semester, MUCISA curates and delivers a robust calendar of activities designed to enhance learning, foster innovation, and build professional competence. One of the highlights of these activities is the hosting of hackathons, which bring together students to collaborate on solving real-life problems through innovative coding and software development. These events are complemented by coding nights, where members meet informally to code together, share ideas, and support one anothers technical growth. The association also organizes tech talks and workshops, where industry experts and alumni are invited to share insights on emerging trends, practical tools, and career advice. Members are encouraged to engage in collaborative group projects, contributing to open-source platforms, or building solutions that address local and global issues. These projects not only build technical skills but also strengthen teamwork and leadership.
           </p>
           <img className="image" src={about1} alt="hhh" />

@@ -1,5 +1,6 @@
  import { useState } from 'react';
 import '../CSS-styling/Register.css';
+import Swal from'sweetalert2';
 import Step1 from '../registration/steps/step1';
 import Step2 from '../registration/steps/step2';
 import Step3 from '../registration/steps/step3';
@@ -37,7 +38,11 @@ function Register() {
       const result=await res.json();
 
       if (res.ok) {
-        alert('Registration successful!');
+        Swal.fire({
+          icon:'success',
+          title:'Success',
+          text:'Your Application Has been successfully submitted wait for aproval Email',
+        });
         setStep (0); // Reset to step 0 after successful submission
         setFormData({
           personal: {},
@@ -46,7 +51,12 @@ function Register() {
           involvement: {},
         });
       } else {
-       alert('Error: ' + result.errors?.join(', ') || result.error);
+        Swal.fire({
+          icon:'error',
+          title:'..oops',
+          text:'An Error Occured during submission' + result.errors?.join(', ') || result.error,
+        });
+
       }
     } catch (error) {
       console.error('Error submitting form:', error);

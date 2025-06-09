@@ -6,8 +6,7 @@ import AboutMucisa from "../components/AboutHome.jsx";
 
 import HeroSection from "../components/hero.jsx";
 import QuickStats from "../components/Quickstats.jsx";
-import MissionVision from "../components/mission.jsx";
-import Programs from '../components/programs.jsx';
+
 import Team from '../components/Team.jsx';
 import JoinSection from '../components/JoinSection.jsx';
 import Footer from '../components/footer.jsx';
@@ -27,8 +26,7 @@ export default function Home(){
             <h2>Maseno University computing And Informatics Student Association</h2>
             <QuickStats />
               <AboutMucisa />
-               <MissionVision />
-            <Programs />
+              
             <RecentActivities />
             <UpcomingEvents />
             <JoinSection/>

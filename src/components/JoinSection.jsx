@@ -1,6 +1,8 @@
 import '../CSS-styling/JoinSection.css';
+import { useNavigate } from 'react-router-dom';
 
 const JoinSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="join-container">
       <h2>Get Involved with MUCISA</h2>
@@ -8,7 +10,7 @@ const JoinSection = () => {
         <div className="join-card">
           <h3>Become a Member</h3>
           <p>Join as a student to engage in tech events, training, and collaborative innovation.</p>
-          <button>Apply Now</button>
+          <button onClick={()=>navigate( '/register')}>Apply Now</button>
         </div>
         <div className="join-card">
           <h3>Become a Sponsor</h3>

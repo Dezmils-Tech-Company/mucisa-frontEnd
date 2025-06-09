@@ -21,7 +21,7 @@ import hack5 from '../assets/hack5.jpeg'
 
 const activities = [
   {
-    title: "TechVibe Gala",
+    title: "The TechVibe Gala",
     description: "A dazzling premiere of MUCISAs farewell tradition, held in honor of our trailblazing fourth-year legends. Elegance met energy as the evening unfolded with breathtaking ambience, stylish attires, and heartfelt toasts.From dance challenges, to a thrilling Best Couple competition that had everyone on the edge of their seats, the night was packed with laughter, joy, and unforgettable memories. Overflowing plates, endless selfies, and pure vibes made TechVibe not just an event, but an experience — the perfect blend of celebration, emotion, and unfiltered MUCISA magic. ",
     images: [
       gala1,
@@ -62,7 +62,8 @@ const activities = [
 const RecentActivities = () => {
   return (
     <div className="activities-wrapper">
-        <h2 className="section-title">Recent Activities</h2>
+        <h2>Recent Activities</h2>
+
       {activities.map((activity, index) => (
         <div key={index} className="activity-block">
           <h3>{activity.title}</h3>

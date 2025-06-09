@@ -2,18 +2,17 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FaHome, FaInfoCircle } from 'react-icons/fa';
+import { FaHandsHelping, FaHome } from 'react-icons/fa';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/contact.jsx";
 import SupportPage from "./pages/support.jsx";
-import Team from './components/Team.jsx';
 import Programs from './components/programs.jsx';
 import Hackathons from "./components/hackathons.jsx";
 import Loader from "./components/Loader";
 import Register from "./pages/Register.jsx";
 import { AiFillPhone } from "react-icons/ai";
-const Company = () => <h2>No Confirmed Partner Yet!</h2>;
+
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +36,9 @@ window.addEventListener("scroll", handleScroll);
         <nav>
           <ul>
             <li><Link to="/"><FaHome /> Home</Link></li>
-            <li><Link to="/about"><FaInfoCircle /> About</Link></li>
-            <li><Link to="/support">Support</Link></li>
-            <li><Link to="/contact">Contact <AiFillPhone /></Link></li>
+            
+            <li><Link to="/support"><FaHandsHelping />   Support</Link></li>
+            <li><Link to="/contact"><AiFillPhone /> Contact </Link></li>
           </ul>
         </nav>
       </header>
@@ -47,10 +46,7 @@ window.addEventListener("scroll", handleScroll);
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />}>
-            <Route path="team" element={<Team />} />
-            <Route path="company" element={<Company />} />
-          </Route>
+          <Route path="/about" element={<About />}/>
           <Route path="/programs" element={<Programs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/hackathon" element={<Hackathons />} />
