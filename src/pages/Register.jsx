@@ -40,7 +40,7 @@ function Register() {
 
       if (res.ok) {
         // Send auto-reply to applicant
-      await emailjs.send(
+       emailjs.send(
         'service_ex2j4bm', // Same service ID
         'template_hy1j2e2',
         formData,
