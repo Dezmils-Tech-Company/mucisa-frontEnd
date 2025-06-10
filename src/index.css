@@ -86,9 +86,7 @@ p{
   margin-bottom: 1rem;
   font-family: poppins, sans-serif;
 }
-button:hover {
-    background-color: #01b6f8;
-}
+
 @media (max-width: 768px) and (max-width: 480px) {
   nav ul {
     padding: 5px 10px;

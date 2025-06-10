@@ -1,4 +1,6 @@
 import '../CSS-styling/recentActivities.css';
+import {useState} from 'react';
+import {FaHeart} from 'react-icons/fa';
 import gala1 from '../assets/gala1.jpg'
 import gala2 from '../assets/gala2.jpg'
 import gala3 from '../assets/gala3.jpg'
@@ -60,22 +62,36 @@ const activities = [
 
 
 const RecentActivities = () => {
+  const [likes,setLikes]=useState(0);
+  const [liked ,setLiked]=useState(false);
+
+  const toggleLike=()=>{
+    setLiked(!liked);
+    setLikes(prev =>liked ?prev-1:prev+1);
+  }
   return (
+    <>
+            <h2>Recent Activities</h2>
     <div className="activities-wrapper">
-        <h2>Recent Activities</h2>
+
 
       {activities.map((activity, index) => (
         <div key={index} className="activity-block">
-          <h3>{activity.title}</h3>
+          <h3>{activity.title}  <button className='likeBtn' onClick={toggleLike}> <FaHeart color={liked ?'red':'grey' } />{likes}</button> </h3>
           <p>{activity.description}</p>
+           
           <div className="masonry-gallery">
             {activity.images.map((img, i) => (
               <img key={i} src={img} alt="about" />
             ))}
           </div>
+          
         </div>
+        
       ))}
+     
     </div>
+    </>
   );
 };
 

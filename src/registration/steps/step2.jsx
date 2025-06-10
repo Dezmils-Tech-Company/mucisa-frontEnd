@@ -28,9 +28,9 @@ const Step2 = ({ nextStep, handleDataChange, prevStep }) => {
   const validate = () => {
     const newErrors = {};
 
-    if (!localData.course.trim()) newErrors.course = 'Your Course of study is required .';
+    if (!localData.course.trim()) newErrors.course = 'Your Course is required .';
     if (!localData.yearOfStudy.trim()) newErrors.yearOfStudy = 'Year of study is required.';
-    if (!localData.admNumber.trim()) newErrors.admNumber = 'Admission number is required.';
+    if (!localData.admNumber.trim()) newErrors.admNumber = 'Adm No is required.';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -58,7 +58,7 @@ const Step2 = ({ nextStep, handleDataChange, prevStep }) => {
       <form className="form-grid" onSubmit={handleNext} noValidate>
         <div>
           <label>
-            Faculty/School <span style={{ color: 'red' }}>*</span>
+            Faculty/School
           </label>
           <input
             name="Faculty"
@@ -71,15 +71,16 @@ const Step2 = ({ nextStep, handleDataChange, prevStep }) => {
         </div>
 
         <div>
-            Your Admission Number <span style={{ color: 'red' }}>*</span>
-          <label>Your Course of Study</label>
+            
+          <label>Your Course of Study<span style={{ color: 'red' }}>*</span></label>
           <input
             name="course"
             placeholder="Course of study"
             onChange={handleChange}
             value={localData.course}
+            className={errors.course ? 'input-error' : ''}
           />
-          {errors.course && <p className="error-message">{errors.course}</p>}
+          {errors.course && <em className="error-message">{errors.course}</em>}
         </div>
 
         <div>
@@ -93,7 +94,7 @@ const Step2 = ({ nextStep, handleDataChange, prevStep }) => {
             value={localData.yearOfStudy}
             className={errors.yearOfStudy ? 'input-error' : ''}
           />
-          {errors.yearOfStudy && <p className="error-message">{errors.yearOfStudy}</p>}
+          {errors.yearOfStudy && <em className="error-message">{errors.yearOfStudy}</em>}
         </div>
 
         <div>
@@ -107,7 +108,7 @@ const Step2 = ({ nextStep, handleDataChange, prevStep }) => {
             value={localData.admNumber}
             className={errors.admNumber ? 'input-error' : ''}
           />
-          {errors.admNumber && <p className="error-message">{errors.admNumber}</p>}
+          {errors.admNumber && <em className="error-message">{errors.admNumber}</em>}
         </div>
       </form>
 

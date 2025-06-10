@@ -1,27 +1,7 @@
-.form-step {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 
-.form-step input, select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-.form-step input:focus, select:focus {
-  border-color: #0077cc;
-  outline: none;
-}
-
-.form-step .error {
-  color: red;
-  font-size: 0.4rem;
-}
-.form-grid {
+.form-gridi {
   display: grid;
- grid-template-columns: repeat(2, 1fr);
+ grid-template-columns: repeat(1, 1fr);
   gap: 16px;
   max-width: 600px;
   margin: auto;
@@ -39,19 +19,16 @@
 }
 
 .form-grid input,
-.form-grid select {
+.form-grid select, .form-grid textarea {
   width: 95%;
+  max-width: 95%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
   background-color: #f9f9f9;
 }
- .form-grid textarea{
-  max-width: 200px;
-  width: 200px;
-  font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+
 .form-grid input::placeholder {
   color: #d6daf8;
 }
@@ -77,11 +54,4 @@
 }
 em{
   font-size: 0.8rem;
-}
-@media (max-width: 768px) and (max-width: 480px) {
- .form-grid  textarea{
-  max-width: 150px;
-  width: 150px;
-  height: 50px;
- }
 }

@@ -94,7 +94,7 @@ if (dob > today) {
             value={localData.firstName}
             className={errors.firstName ? 'input-error' : ''}
           />
-          {errors.firstName && <p className="error-message">{errors.firstName}</p>}
+          {errors.firstName && <em className="error-message">{errors.firstName}</em>}
         </div>
 
         <div>
@@ -118,7 +118,7 @@ if (dob > today) {
             value={localData.lastName}
             className={errors.lastName ? 'input-error' : ''}
           />
-          {errors.lastName && <p className="error-message">{errors.lastName}</p>}
+          {errors.lastName && <em className="error-message">{errors.lastName}</em>}
         </div>
 
         <div>
@@ -132,7 +132,7 @@ if (dob > today) {
             value={localData.telephone}
             className={errors.telephone ? 'input-error' : ''}
           />
-          {errors.telephone && <p className="error-message">{errors.telephone}</p>}
+          {errors.telephone && <em className="error-message">{errors.telephone}</em>}
         </div>
 
         <div>
@@ -147,7 +147,7 @@ if (dob > today) {
             value={localData.email}
             className={errors.email ? 'input-error' : ''}
           />
-          {errors.email && <p className="error-message">{errors.email}</p>}
+          {errors.email && <em className="error-message">{errors.email}</em>}
         </div>
 
         <div>
@@ -163,7 +163,6 @@ if (dob > today) {
             <option value="">Select Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
-            <option value="other">Rather not specify</option>
           </select>
         </div>
 
@@ -178,7 +177,7 @@ if (dob > today) {
             value={localData.dateOfBirth}
             className={errors.dateOfBirth ? 'input-error' : ''}
           />
-          {errors.dateOfBirth && <p className="error-message">{errors.dateOfBirth}</p>}
+          {errors.dateOfBirth && <em className="error-message">{errors.dateOfBirth}</em>}
         </div>
       </form>
 

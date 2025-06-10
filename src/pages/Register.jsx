@@ -7,6 +7,7 @@ import Step3 from '../registration/steps/step3';
  import Step4 from '../registration/steps/step4';
 import Confirmation from '../registration/steps/Confirmation';
 import ProgressBar from '../registration/ProgressBar.jsx';
+import emailjs from '@emailjs/browser';
 
 function Register() {
   const [step, setStep] = useState(0);
@@ -38,6 +39,13 @@ function Register() {
       const result=await res.json();
 
       if (res.ok) {
+        // Send auto-reply to applicant
+      await emailjs.send(
+        'service_ex2j4bm', // Same service ID
+        'template_hy1j2e2',
+        formData,
+        '_wm3KswFnZELfE6pw' // Same user ID
+      );
         Swal.fire({
           icon:'success',
           title:'Success',

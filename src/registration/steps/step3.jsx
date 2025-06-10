@@ -31,7 +31,7 @@ const handlePrev = (e) => {
      
     <>
     <h2>Tech Stack Information</h2>
-        <p>Please Provide your faculty details. Fill accurately for you to win a chance of joining us</p>
+        <p>please fill all fields correctly. This will help us locate you when opportunities arise. If you are not Familliar indicate it on the next page</p>
         <br />
     <form className="form-grid" onSubmit={handleNext}>
         <div>

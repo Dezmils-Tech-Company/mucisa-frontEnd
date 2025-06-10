@@ -39,17 +39,16 @@ const handlePrev = (e) => {
       <textarea
         name="reason"
         onChange={handleChange}
-        rows="3"
-        placeholder="Tell us why you want to join MUCISA..."
+       
+        placeholder="Briefly outline why you want to join MUCISA..."
       />
          </div>
          <div>
-          <label>What Are Youe Expectations After Joining MUCISA</label>
+          <label>Future Expectations in Mucisa:</label>
             <textarea
         name="Expectations"
         onChange={handleChange}
-        rows="3"
-        placeholder="What Are You Excited About Joining Mucisa..."
+        placeholder="What Are Youe Expectations After Joining MUCISA..."
       />
          
          </div>
