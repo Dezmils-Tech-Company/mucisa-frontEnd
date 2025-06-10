@@ -30,22 +30,11 @@ function Register() {
 
   const sendEmails = async () => {
     try {
-      // Prepare data for emails
-      const emailData = {
-        ...formData.personal,
-        ...formData.faculty,
-        application_date: new Date().toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        })
-      };
-
       // Send auto-reply to applicant
       await emailjs.send(
         'service_ex2j4bm',
         'template_hy1j2e2', // This should be your auto-reply template
-        emailData,
+        formData,
         '_wm3KswFnZELfE6pw'
       );
     } catch (error) {
@@ -65,8 +54,7 @@ function Register() {
       const result = await res.json();
 
       if (res.ok) {
-        // Send emails after successful submission
-        await sendEmails();
+     
        
         Swal.fire({
           icon: 'success',
@@ -82,6 +70,8 @@ function Register() {
           tech: {},
           involvement: {},
         });
+           // Send emails after successful submission
+        await sendEmails();
       } else {
         Swal.fire({
           icon: 'error',
