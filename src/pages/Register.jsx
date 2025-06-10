@@ -39,13 +39,7 @@ function Register() {
       const result=await res.json();
 
       if (res.ok) {
-        // Send auto-reply to applicant
-       emailjs.send(
-        'service_ex2j4bm', // Same service ID
-        'template_hy1j2e2',
-        formData,
-        '_wm3KswFnZELfE6pw' // Same user ID
-      );
+       
         Swal.fire({
           icon:'success',
           title:'Success',
@@ -58,6 +52,13 @@ function Register() {
           tech: {},
           involvement: {},
         });
+         // Send auto-reply to applicant
+       emailjs.send(
+        'service_ex2j4bm', // Same service ID
+        'template_hy1j2e2',
+        formData,
+        '_wm3KswFnZELfE6pw' // Same user ID
+      );
       } else {
         Swal.fire({
           icon:'error',
