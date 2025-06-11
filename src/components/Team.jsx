@@ -110,7 +110,7 @@ const teamMembers = [
   },
   {
     name: 'Jewel Visenwa',
-    role: 'CCT Representative',
+    role: 'CS Representative',
     photo: jewel,
      socials: [
       { icon: <FaFacebookF />, label: 'Facebook', url: '#' },
@@ -122,7 +122,7 @@ const teamMembers = [
   
   {
     name: 'Terry Peters',
-    role: 'ICTM Representative',
+    role: 'IT Representative',
     photo: terry,
      socials: [
       { icon: <FaFacebookF />, label: 'Facebook', url: '#' },

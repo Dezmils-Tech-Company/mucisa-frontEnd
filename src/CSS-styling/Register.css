@@ -1,28 +1,12 @@
 .registration-form-container{
-  max-width:500px;
-  margin:50px auto auto auto;
+  max-width:600px;
+  margin:60px auto auto auto;
   border-radius: 8px;
   box-shadow: 2px 4px 10px #01091b3c;
   padding: 4rem 2rem;
 }
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
 
-input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+
 input:focus {
   border:1px solid #007bff;
 }

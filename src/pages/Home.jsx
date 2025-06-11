@@ -30,7 +30,7 @@ export default function Home(){
             <RecentActivities />
             <UpcomingEvents />
             <JoinSection/>
-            <div className="section-title">
+            <div>
                 <h2  >Meet our executive Team 2024/25</h2>
                <Team />
 
