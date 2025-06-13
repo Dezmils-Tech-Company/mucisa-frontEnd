@@ -10,8 +10,9 @@ import SupportPage from "./pages/support.jsx";
 import Programs from './components/programs.jsx';
 import Hackathons from "./components/hackathons.jsx";
 import Loader from "./components/Loader";
-import Register from "./pages/Register.jsx";
+import Register from "./pages/MemberRegister.jsx";
 import { AiFillPhone } from "react-icons/ai";
+import Form1 from "./pages/SponsorRegister.jsx";
 
 
 function App() {
@@ -52,6 +53,7 @@ window.addEventListener("scroll", handleScroll);
           <Route path="/hackathon" element={<Hackathons />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/register" element={<Register />} />
+        <Route path="/partners" element={<Form1 />} />
         </Routes>
       </div>
     </>

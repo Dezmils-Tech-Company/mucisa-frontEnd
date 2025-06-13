@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import '../CSS-styling/Register.css';
 import Swal from 'sweetalert2';
-import Step1 from '../registration/steps/step1';
-import Step2 from '../registration/steps/step2';
-import Step3 from '../registration/steps/step3';
-import Step4 from '../registration/steps/step4';
-import Confirmation from '../registration/steps/Confirmation';
+import Step1 from '../registration/steps/step1.jsx';
+import Step2 from '../registration/steps/step2.jsx';
+import Step3 from '../registration/steps/step3.jsx';
+import Step4 from '../registration/steps/step4.jsx';
+import Confirmation from '../registration/steps/Confirmation.jsx';
 import ProgressBar from '../registration/ProgressBar.jsx';
 import emailjs from '@emailjs/browser';
 
@@ -70,16 +70,45 @@ function Register() {
           tech: {},
           involvement: {},
         });
-           // Send emails after successful submission
-        await sendEmails();
+           
       } else {
+        if (formData.field === 'email'){
+            Swal.fire({
+          icon: 'error',
+          title: 'Duplication Error',
+          text: 'Email Already Exists. Kindly wait for your Affliation',
+        });
+        // Reset form
+        setStep(0);
+        setFormData({
+          personal: {},
+          faculty: {},
+          tech: {},
+          involvement: {},
+        });
+        }else if (formData.field=== 'admNumber'){
+          Swal.fire({
+          icon: 'error',
+          title: 'Duplication Error',
+          text: 'Admission Number Already Exists. Kindly wait for your Affliation',
+        });
+        // Reset form
+        setStep(0);
+        setFormData({
+          personal: {},
+          faculty: {},
+          tech: {},
+          involvement: {},
+        });
+
+        } else{
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'An Error Occurred during submission: ' + (result.errors?.join(', ') || result.error || 'Please try again later'),
         });
       }
-    } catch (error) {
+    } }catch (error) {
       console.error('Error submitting form:', error);
       Swal.fire({
         icon: 'error',
@@ -87,6 +116,8 @@ function Register() {
         text: 'Could not connect to the server. Please check your internet connection and try again.',
       });
     }
+    // Send emails after successful submission
+        await sendEmails();
   };
 
   return (

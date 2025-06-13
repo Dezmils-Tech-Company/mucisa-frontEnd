@@ -20,7 +20,7 @@ const JoinSection = () => {
         <div className="join-card">
           <h3>Become a Mentor</h3>
           <p>Launch a Mentorship program with us. we welcome any tech related mentorship program</p>
-          <button>Start now</button>
+          <button onClick={()=>navigate( '/partners')}>Starts Now</button>
         </div>
       </div>
     </section>
