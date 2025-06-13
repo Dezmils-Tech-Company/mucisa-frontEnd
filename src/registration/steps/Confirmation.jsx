@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/confirmation.css';
-const Confirmation = ({ prevStep, formData, handleSubmit }) => {
+import { FaSpinner } from 'react-icons/fa';
+const Confirmation = ({ prevStep, formData, handleSubmit, loading }) => {
   return (
     <div>
       <h2>Confirm Your Details</h2>
@@ -14,7 +15,15 @@ const Confirmation = ({ prevStep, formData, handleSubmit }) => {
      <strong> Faculty:</strong> {formData.faculty.Faculty}<br />
       <strong>Course:</strong> {formData.faculty.course}<br />
       <button onClick={prevStep}>Back</button>
-      <button onClick={handleSubmit}>Submit</button>
+     <button onClick={handleSubmit} disabled={loading}>
+          {loading ? (
+            <>
+              Submitting <FaSpinner className="spinner" />
+            </>
+          ) : (
+            'Confirm & Submit'
+          )}
+        </button>
     </div>
   );
 };

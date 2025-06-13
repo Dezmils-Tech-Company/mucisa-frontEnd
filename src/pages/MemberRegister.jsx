@@ -12,6 +12,7 @@ import ProgressBar from '../registration/ProgressBar.jsx';
 import emailjs from '@emailjs/browser';
 
 function Register() {
+  const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     personal: {},
@@ -66,6 +67,7 @@ function Register() {
   };
 
   const handleSubmit = async () => {
+    setLoading(true);
     try {
       const res = await fetch('https://mucisa-maseno-university.onrender.com/api/register', {
         method: 'POST',
@@ -123,6 +125,8 @@ function Register() {
         title: 'Connection Error',
         text: 'Could not connect to the server. Please check your internet connection and try again.',
       });
+    }finally {
+      setLoading(false); // NEW: Stop loading (always)
     }
   };
 
@@ -133,7 +137,7 @@ function Register() {
       {step === 1 && <Step2 nextStep={nextStep} prevStep={prevStep} handleDataChange={handleDataChange} />}
       {step === 2 && <Step3 nextStep={nextStep} prevStep={prevStep} handleDataChange={handleDataChange} />}
       {step === 3 && <Step4 nextStep={nextStep} prevStep={prevStep} handleDataChange={handleDataChange} />}
-      {step === 4 && <Confirmation prevStep={prevStep} formData={formData} handleSubmit={handleSubmit} />}
+      {step === 4 && <Confirmation prevStep={prevStep} formData={formData} handleSubmit={handleSubmit} loading={loading}/>}
     </div>
   );
 }
