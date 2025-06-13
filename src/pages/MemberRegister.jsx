@@ -1,4 +1,6 @@
-import { useState } from 'react';
+// Assuming you have the necessary imports and component setup from your original code
+
+import React, { useState } from 'react';
 import '../CSS-styling/Register.css';
 import Swal from 'sweetalert2';
 import Step1 from '../registration/steps/step1.jsx';
@@ -30,16 +32,36 @@ function Register() {
 
   const sendEmails = async () => {
     try {
-      // Send auto-reply to applicant
+      // 1. Get the applicant's email
+      const applicantEmail = formData.personal.email;
+
+      if (!applicantEmail) {
+        console.warn("Applicant email not found in form data. Cannot send email.");
+        return;
+      }
+
+      // 2. Prepare EmailJS parameters
+      const emailParams = {
+        to_email: applicantEmail,  // Use applicant's email
+        first_name: formData.personal.firstName || 'User', // Safe default
+        last_name:formData.personal.lastName,
+         course: formData.faculty.course || 'Not specified',
+        adm: formData.faculty.admNumber || 'Not specified',
+        phoneNumber: formData.personal.telephone || 'Not specified',
+      };
+
+      // 3. Send auto-reply using EmailJS
       await emailjs.send(
         'service_ex2j4bm',
-        'template_hy1j2e2', // This should be your auto-reply template
-        formData,
+        'template_hy1j2e2', // Replace with your Auto-Reply Template ID
+        emailParams,
         '_wm3KswFnZELfE6pw'
       );
+      console.log("Email sent successfully to " + applicantEmail)
+
     } catch (error) {
       console.error('Error sending emails:', error);
-      // Don't show error to user as the main submission was successful
+      //  Show an error to the user is generally not advised
     }
   };
 
@@ -50,48 +72,15 @@ function Register() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-     
       const result = await res.json();
 
       if (res.ok) {
-     
-       
         Swal.fire({
           icon: 'success',
           title: 'Success',
           text: 'Your Application Has been successfully submitted. You will receive a confirmation email shortly.',
         });
-        
-        // Reset form
-        setStep(0);
-        setFormData({
-          personal: {},
-          faculty: {},
-          tech: {},
-          involvement: {},
-        });
-           
-      } else {
-        if (formData.field === 'email'){
-            Swal.fire({
-          icon: 'error',
-          title: 'Duplication Error',
-          text: 'Email Already Exists. Kindly wait for your Affliation',
-        });
-        // Reset form
-        setStep(0);
-        setFormData({
-          personal: {},
-          faculty: {},
-          tech: {},
-          involvement: {},
-        });
-        }else if (formData.field=== 'admNumber'){
-          Swal.fire({
-          icon: 'error',
-          title: 'Duplication Error',
-          text: 'Admission Number Already Exists. Kindly wait for your Affliation',
-        });
+
         // Reset form
         setStep(0);
         setFormData({
@@ -101,14 +90,33 @@ function Register() {
           involvement: {},
         });
 
-        } else{
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'An Error Occurred during submission: ' + (result.errors?.join(', ') || result.error || 'Please try again later'),
-        });
+        // Send emails after successful submission
+        await sendEmails();
+
+      } else {
+        if (formData.field === 'email') {
+          Swal.fire({
+            icon: 'error',
+            title: 'Duplication Error',
+            text: 'Email Already Exists. Kindly wait for your Affiliation',
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'An Error Occurred during submission: ' + (result.errors?.join(', ') || result.error || 'Please try again later'),
+          });
+          // Reset form
+          setStep(0);
+          setFormData({
+            personal: {},
+            faculty: {},
+            tech: {},
+            involvement: {},
+          });
+        }
       }
-    } }catch (error) {
+    } catch (error) {
       console.error('Error submitting form:', error);
       Swal.fire({
         icon: 'error',
@@ -116,8 +124,6 @@ function Register() {
         text: 'Could not connect to the server. Please check your internet connection and try again.',
       });
     }
-    // Send emails after successful submission
-        await sendEmails();
   };
 
   return (
