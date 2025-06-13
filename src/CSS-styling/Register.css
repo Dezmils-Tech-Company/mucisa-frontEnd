@@ -15,3 +15,35 @@ input:focus {
   color: red;
   margin-top: 8px;
 }
+/* In Register.css or your main CSS file */
+
+/* Overlay Styles */
+.overlayi {
+  position: fixed; /* or 'fixed' if you want it to cover the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+/* Spinner Styles (same as before, but now used with overlay) */
+.spinner {
+  animation: spin 1s linear infinite;
+  color: white; /* Or any contrasting color for the spinner */
+  font-size: 2rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

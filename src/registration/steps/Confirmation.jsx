@@ -18,7 +18,7 @@ const Confirmation = ({ prevStep, formData, handleSubmit, loading }) => {
      <button onClick={handleSubmit} disabled={loading}>
           {loading ? (
             <>
-              Submitting <FaSpinner className="spinner" />
+              Submitting... <FaSpinner className="spinner" />
             </>
           ) : (
             'Confirm & Submit'

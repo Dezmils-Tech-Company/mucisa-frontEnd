@@ -87,13 +87,14 @@ const Step2 = ({ nextStep, handleDataChange, prevStep }) => {
           <label>
             Your Current Year of Study <span style={{ color: 'red' }}>*</span>
           </label>
-          <input
-            name="yearOfStudy"
-            placeholder="Year of Study"
-            onChange={handleChange}
-            value={localData.yearOfStudy}
-            className={errors.yearOfStudy ? 'input-error' : ''}
-          />
+          
+          <select name="yearOfStudy" onChange={handleChange} required>
+                <option value="">Select Year of study</option>
+                <option value="1">Year 1</option>
+                <option value="2">Year 2</option>
+                <option value="3">Year 3</option>
+                <option value="4">Year 4</option>
+            </select>
           {errors.yearOfStudy && <em className="error-message">{errors.yearOfStudy}</em>}
         </div>
 

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import '../CSS-styling/Register.css';
 import Swal from 'sweetalert2';
+import { FaSpinner } from 'react-icons/fa';
 import Step1 from '../registration/steps/step1.jsx';
 import Step2 from '../registration/steps/step2.jsx';
 import Step3 from '../registration/steps/step3.jsx';
@@ -132,6 +133,11 @@ function Register() {
 
   return (
     <div className="registration-form-container">
+      {loading && (
+        <div className="overlayi"><FaSpinner className="spinner" /><br />
+         submitting... 
+        </div>
+      )}
       <ProgressBar step={step} />
       {step === 0 && <Step1 nextStep={nextStep} handleDataChange={handleDataChange} />}
       {step === 1 && <Step2 nextStep={nextStep} prevStep={prevStep} handleDataChange={handleDataChange} />}
